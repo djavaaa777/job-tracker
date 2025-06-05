@@ -22,8 +22,8 @@ A simple job tracking web app that helps you manage job applications: add, filte
 ├── script.js  
 ├── styles.css  
 ├── icons8-delete.svg  
-├── icons8-edit.svg
-├── icons8-speichern-16.png  
+├── icons8-edit.svg  
+├── icons8-speichern-16.png    
 └── README.md
 
 
