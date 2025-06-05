@@ -137,78 +137,29 @@ secondBoxElement.addEventListener("click",(event)=>{
         filterJobs();
     }
 })
-app.get("/export", (req, res) => {
-    const query = 'SELECT * FROM guests';
-    conn.query(query, (err, guests) => {
-        if (err) {
-            return res.status(500).send('Ошибка получения данных');
-        }
 
-        const doc = new PDFDocument({ margin: 40 });
-        const filename = `guests_${Date.now()}.pdf`;
-        const filepath = path.join(__dirname, filename);
+document.getElementById("export-btn").addEventListener("click", () => {
+    if (jobs.length === 0) {
+        alert("No jobs to export.");
+        return;
+    }
 
-        const now = new Date();
-        const dateString = now.toLocaleDateString();
-        const timeString = now.toLocaleTimeString();
-        const exportInfo = `Exported on ${dateString} ${timeString}`;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
 
-        doc.pipe(fs.createWriteStream(filepath));
+    const tableData = jobs.map(job => [
+        job.company,
+        job.position,
+        job.date,
+        job.status
+    ]);
 
-        // Заголовок
-        doc.fontSize(20).text('Guest Book Export', { align: 'center' });
-        doc.moveDown();
-        doc.fontSize(10).text(exportInfo, { align: 'center' });
-        doc.moveDown(2);
-
-        // Заголовки таблицы
-        const headers = ['Full Name', 'Email', 'Country', 'Check-in', 'Check-out', 'Room Type', 'Room #'];
-        const colWidths = [100, 140, 70, 70, 70, 70, 50];
-        const startX = doc.page.margins.left;
-        let startY = doc.y;
-
-        doc.font('Helvetica-Bold');
-        headers.forEach((header, i) => {
-            doc.text(header, startX + colWidths.slice(0, i).reduce((a, b) => a + b, 0), startY, { width: colWidths[i] });
-        });
-
-        startY += 20;
-        doc.moveTo(startX, startY - 5).lineTo(startX + colWidths.reduce((a, b) => a + b, 0), startY - 5).stroke();
-        doc.font('Helvetica');
-
-        // Данные
-        guests.forEach((guest) => {
-            const row = [
-                guest.full_name,
-                guest.email || '-',
-                guest.country,
-                guest.check_in.toISOString().split('T')[0],
-                guest.check_out.toISOString().split('T')[0],
-                guest.room_type,
-                String(guest.room_number)
-            ];
-
-            row.forEach((text, i) => {
-                doc.text(text, startX + colWidths.slice(0, i).reduce((a, b) => a + b, 0), startY, {
-                    width: colWidths[i],
-                    ellipsis: true
-                });
-            });
-
-            startY += 20;
-            if (startY > doc.page.height - 50) {
-                doc.addPage();
-                startY = doc.page.margins.top;
-            }
-        });
-
-        doc.end();
-
-        doc.on("finish", () => {
-            res.download(filepath, filename, (err) => {
-                if (err) console.log(err);
-                fs.unlink(filepath, () => {});
-            });
-        });
+    doc.text("Job Applications", 14, 15);
+    doc.autoTable({
+        head: [["Company", "Position", "Date", "Status"]],
+        body: tableData,
+        startY: 20
     });
+
+    doc.save("job-applications.pdf");
 });
