@@ -18,12 +18,12 @@ A simple job tracking web app that helps you manage job applications: add, filte
 - jsPDF + jsPDF-AutoTable (for PDF export)
 
 ## 📂 Project Structure
-├── index.html
-├── script.js
-├── styles.css
-├── icons8-delete.svg
+├── index.html  
+├── script.js  
+├── styles.css  
+├── icons8-delete.svg  
 ├── icons8-edit.svg
-├── icons8-speichern-16.png
+├── icons8-speichern-16.png  
 └── README.md
 
 
