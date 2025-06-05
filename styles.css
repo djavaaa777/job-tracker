@@ -1,0 +1,195 @@
+body{
+    background-color: #F3F3F3;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+.title{
+    text-align: center;
+}
+
+.box1{
+    background-color: #fff;
+    width:450px;
+    min-height: 350px;
+    margin:auto auto;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+
+
+.form-container .field-control{
+    width:200px;
+    height:20px;
+}
+.form-container .btn{
+    width:80px;
+    background-color: #307CD8;
+    color:#fff;
+    height:20px;
+    border:none;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    
+}
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+  
+.btn:hover {
+    background-color: #225fab;
+}
+
+.form-container .field-control-filter{
+    width:90px;
+    height:20px;
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.form-group label {
+    width: 130px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 50px;
+}
+.add-job-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.box2{
+    background-color: #fff;
+    max-width:600px;
+    min-height: 150px;
+    margin:auto auto;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    position: relative;
+    margin-top: 30px;
+}
+.no-jobs-paragraph{
+    text-align: center;
+    font-weight: 600;
+    padding-top: 20px;
+}
+.job-table {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    font-size: 15px;
+}
+
+.job-table thead {
+    background-color: #f5f5f5;
+}
+
+.job-table th, .job-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.job-table th {
+    font-weight: 600;
+    color: #333333;
+    font-size: 15px;
+}
+
+.job-table td {
+    color: #555555;
+}
+
+.job-table tr:last-child td {
+    border-bottom: none;
+}
+
+.job-table td:last-child {
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+    white-space: nowrap;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding-right:56px;
+}
+
+
+
+.job-table tr:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+}
+
+.job-table td.pending {
+    color: #b58b00;
+}
+.job-table td.interview {
+    color: #267e2d;
+}
+.job-table td.rejected {
+    color: #a4000f;
+}
+.delete-icon,.edit-icon{
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.delete-icon:hover,.edit-icon:hover{
+    transform: scale(1.1);
+}
+.save-edit-btn{
+    cursor: pointer;
+}
+.edit-company,
+.edit-position,
+.edit-date,
+.edit-status {
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
+    padding: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 30px;
+}
+.edit-status{
+    width:100px;
+}
+.export-btn {
+    background-color: #34a853;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.export-btn:hover {
+    background-color: #2c8e46;
+}
+
+

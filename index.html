@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="title">
+        <h1>Job Tracker</h1>
+    </div>
+    <div class="box1">
+            <form class="form-container" action="#" method="post">
+                <p class="add-job-title">Add new Job</p>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input class="field-control" name="company" id="company" placeholder="Company" >
+                </div>
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <input class="field-control" name="position" id="position" placeholder="Position" >
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input class="field-control" type="date" id="date" name="date" >
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select class="field-control" name="status" id="status">
+                        <option value="pending">Pending</option>
+                        <option value="interview">Interview</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+                <div class="btn-wrapper">
+                    <button class="btn" type="submit">Add Job</button>
+                </div>
+            </form>
+            <div class="form-group">
+                <label for="status-filter">Filter by Status:</label>
+                <select class="field-control-filter" name="status-filter" id="status-filter">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="interview">Interview</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </div>
+            <div class="btn-wrapper">
+                <button class="export-btn" id="export-btn">Export to PDF</button>
+            </div>            
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+</html>
