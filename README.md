@@ -35,6 +35,10 @@ A simple job tracking web app that helps you manage job applications: add, filte
 4. Click icons to edit/delete entries.
 5. Export to PDF using the button.
 
+## 🌐 Live Demo
+
+👉 [Click here to try the app](https://djavaaa777.github.io/job-tracker/)
+
 ## 📄 License
 
 This project is licensed under the MIT License.
